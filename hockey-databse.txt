@@ -53,7 +53,6 @@ INSERT INTO player (TeamName, Name, Number, Flag, Position, Height, Weight, Exp,
 	("Bruins", "John Moore", 27, "USA", 'D', "6-2", 210, 9, '1990-11-19', 29),
 	("Bruins", "Joakim Nordstrom", 20, "SWE", 'F', "6-1", 194, 6, '1992-02-25', 27),
 	("Bruins", "David Pastrnak", 88, "CZE", 'F', "6-0", 194, 5, '1996-05-25', 23),
-    	("Bruins", "Alex Petrovic", 6, "CAN", 'D', "6-4", 216, 7, '1992-03-03', 27),
     	("Bruins", "Tuukka Rask", 40, "FIN", 'G', "6-3", 176, 12, '1987-03-10', 32),
     	("Bruins", "Chris Wagner", 14, "USA", 'F', "6-0", 198, 5, '1991-05-27', 28),
     	("Bruins", "Jakub Zboril", 67, "CZE", 'D', "6-0", 200, 1, '1997-02-21', 22);

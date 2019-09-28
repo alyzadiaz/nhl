@@ -20,4 +20,5 @@ instructions
 * **Alyza Diaz Rodriguez** - [LinkedIn](linkedin.com/in/alyzadiaz)
 
 ## Acknowledgments
-* NHL website
+* Player headshots were pulled from the [NHL](nhl.com) official website.
+* [Country Flags](countryflags.com) used in player profiles.

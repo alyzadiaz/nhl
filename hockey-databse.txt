@@ -83,3 +83,4 @@ INSERT INTO nhl.player (TeamName, Name, Number, Flag, Position, Height, Weight, 
     	("Blackhawks", "Zack Smith", 15, "CAN", 'F', "6-2", 208, 11, '1988-04-05', 31),
     	("Blackhawks", "Dylan Strome", 17, "CAN", 'F', "6-3", 200, 3, '1997-03-07', 22),
     	("Blackhawks", "Jonathan Toews", 19, "CAN", 'F', "6-2", 201, 12, '1988-04-29', 31);
+

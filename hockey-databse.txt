@@ -1,0 +1,94 @@
+Hockey Database
+
+---------------------------------------------------CREATE-------------------------------------------------
+CREATE DATABASE	nhl
+
+CREATE TABLE player(
+	TeamName varchar(255)
+	Name varchar(255)
+	Number int
+	Flag varchar(255)
+	Position char
+	Height varchar(255)
+	Weight int
+	Exp int
+	DOB date
+	Age int
+);
+
+CREATE TABLE team(
+	TeamName varchar(255)
+);
+
+
+---------------------------------------------------VALUES-------------------------------------------------
+INSERT INTO team(
+	VALUES ("Bruins"),
+	("Blackhawks")
+);
+
+INSERT INTO player (TeamName, Name, Number, Flag, Position, Height, Weight, Exp, DOB, Age)
+	VALUES ("Bruins", "David Backes", 42, "USA", 'F', "6-3", 215, 13, '1984-05-01', 35),
+	("Bruins", "Patrice Bergeron", 37, "CAN", 'F', "6-1", 195, 15, '1985-07-24', 34),
+	("Bruins", "Anders Bjork", 10, "USA", 'F', "6-0", 190, 2, '1996-08-05', 23),
+	("Bruins", "Anton Blidh", 81, "SWE", 'F', "6-0", 201, 3, '1995-03-14', 24),
+	("Bruins", "Peter Cehlarik", 22, "SVK", 'F', "6-2", 202, 3, '1995-08-02', 24),
+	("Bruins", "Zdeno Chara", 33, "SVK", 'D', "6-9", 250, 21, '1977-03-18', 42),
+	("Bruins", "Connor Clifton", 75, "USA", 'D', "5-11", 175, 1, '1995-04-28', 24),
+	("Bruins", "Charlie Coyle", 13, "USA", 'F', "6-3", 200, 7, '1992-03-02', 27),
+	("Bruins", "Jake DeBrusk", 74, "CAN", 'F', "6-0", 188, 2, '1996-10-17', 23),
+	("Bruins", "Trent Frederic", 82, "USA", 'F', "6-2", 203, 1, '1998-02-11', 21),
+	("Bruins", "Matt Grzelcyk", 48, "USA", 'D', "5-9", 174, 3, '1994-01-05', 26),
+	("Bruins", "Jaroslav Halak", 41, "SVK", 'G', "5-11", 185, 13, '1985-05-13', 34),
+	("Bruins", "Danton Heinen", 43, "CAN", 'F', "6-1", 188, 3, '1995-07-05', 24),
+	("Bruins", "Steven Kampfer", 44, "USA", 'F', "5-11", 198, 7, '1988-09-24', 31),
+	("Bruins", "David Krejci", 46, "CZE", 'F', "6-0", 188, 13, '1986-04-28', 33),
+	("Bruins", "Torey Krug", 47, "USA", 'D', "5-9", 186, 8, '1991-04-12', 28),
+	("Bruins", "Karson Kuhlman", 83, "USA", 'F', "5-11", 185, 1, '1995-09-26', 24),
+	("Bruins", "Sean Kuraly", 52, "USA", 'F', "6-2", 213, 3, '1993-01-20', 27),
+	("Bruins", "Maxime Lagace", 35, "CAN", 'G', "6-2", 190, 2, '1993-01-12', 27),
+	("Bruins", "Brad Marchand", 63, "CAN", 'F', "5-9", 181, 10, '1988-05-11', 31),
+	("Bruins", "Charlie McAvoy", 73, "USA", 'D', "6-0", 208, 2, '1997-12-21', 22),
+	("Bruins", "Kevan Miller", 86, "USA", 'D', "6-2", 210, 6, '1987-11-15', 32),
+	("Bruins", "John Moore", 27, "USA", 'D', "6-2", 210, 9, '1990-11-19', 29),
+	("Bruins", "Joakim Nordstrom", 20, "SWE", 'F', "6-1", 194, 6, '1992-02-25', 27),
+	("Bruins", "David Pastrnak", 88, "CZE", 'F', "6-0", 194, 5, '1996-05-25', 23),
+    	("Bruins", "Alex Petrovic", 6, "CAN", 'D', "6-4", 216, 7, '1992-03-03', 27),
+    	("Bruins", "Tuukka Rask", 40, "FIN", 'G', "6-3", 176, 12, '1987-03-10', 32),
+    	("Bruins", "Chris Wagner", 14, "USA", 'F', "6-0", 198, 5, '1991-05-27', 28),
+    	("Bruins", "Jakub Zboril", 67, "CZE", 'D', "6-0", 200, 1, '1997-02-21', 22);
+
+INSERT INTO player (TeamName, Name, Number, Flag, Position, Height, Weight, Exp, DOB, Age)
+	VALUES ("Blackhawks", "Drake Caggiula", 91, "CAN", 'F', "5-10", 176, 3, '1994-06-20', 25),
+	("Blackhawks", "Ryan Carpenter", 22, "USA", 'F', "6-0", 200, 4, '1991-01-18', 29),
+    	("Blackhawks", "Corey Crawford", 50, "CAN", 'G', "6-2", 216, 12, '1984-12-31', 35),
+    	("Blackhawks", "Carl Dahlstrom", 63, "SWE", 'D', "6-4", 231, 2, '1995-01-28', 25),
+    	("Blackhawks", "Calvin de Haan", 44, "CAN", 'D', "6-1", 195, 7, '1991-05-09', 44),
+    	("Blackhawks", "Alex DeBrincat", 12, "USA", 'F', "5-7", 165, 2, '1997-12-18', 22),
+    	("Blackhawks", "Collin Delia", 60, "USA", 'G', "6-2", 208, 2, '1994-06-20', 25),
+	("Blackhawks", "Dennis Gilbert", 39, "USA", 'D', "6-2", 216, 1, '1996-10-30', 23),
+    	("Blackhawks", "Erik Gustafsson", 56, "SWE", 'D', "6-0", 197, 3, '1992-03-14', 27),
+    	("Blackhawks", "David Kampf", 64, "CZE", 'F', "6-2", 188, 2, '1995-01-12', 25),
+    	("Blackhawks", "Patrick Kane", 88, "USA", 'F', "5-10", 177, 12, '1988-11-19', 31),
+    	("Blackhawks", "Duncan Keith", 2, "CAN", 'D', "6-1", 192, 14, '1983-07-16', 36),
+    	("Blackhawks", "Slater Koekkoek", 68, "CAN", 'D', "6-2", 193, 5, '1994-02-18', 25),
+    	("Blackhawks", "Robin Lehner", 40, "SWE", 'G', "6-4", 240, 9, '1991-07-24', 28),
+	("Blackhawks", "Olli Maatta", 6, "FIN", 'D', "6-2", 206, 6, '1994-08-22', 25),
+    	("Blackhawks", "Connor Murphy", 5, "USA", 'D', "6-4", 212, 6, '1993-03-26', 26),
+    	("Blackhawks", "Alexander Nylander", 92, "CAN",'F', "6-1", 196, 3, '1998-03-02', 21),
+    	("Blackhawks", "Brendan Perlini", 11, "USA", 'F', "6-3", 211, 3, '1996-04-27', 23),
+    	("Blackhawks", "Brandon Saad", 20, "USA", 'F', "6-1", 206, 8, '1992-10-27', 27),
+	("Blackhawks", "Brent Seabrook", 7, "CAN", 'D', "6-3", 220, 14, '1985-04-20', 34),
+    	("Blackhawks", "Andrew Shaw", 65, "CAN", 'F', "5-11", 182, 8, '1991-07-20', 28),
+    	("Blackhawks", "Zack Smith", 15, "CAN", 'F', "6-2", 208, 11, '1988-04-05', 31),
+    	("Blackhawks", "Dylan Strome", 17, "CAN", 'F', "6-3", 200, 3, '1997-03-07', 22),
+    	("Blackhawks", "Jonathan Toews", 19, "CAN", 'F', "6-2", 201, 12, '1988-04-29', 31);
+
+
+
+
+
+
+
+
+

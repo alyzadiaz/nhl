@@ -5,7 +5,7 @@ CREATE DATABASE	nhl
 
 CREATE TABLE player(
 	TeamName varchar(255)
-	Name varchar(255)
+	Name varchar(255) NOT NULL PRIMARY KEY
 	Number int
 	Flag varchar(255)
 	Position char
@@ -14,10 +14,11 @@ CREATE TABLE player(
 	Exp int
 	DOB date
 	Age int
+	FOREIGN KEY (TeamName) REFERENCES team(TeamName)
 );
 
 CREATE TABLE team(
-	TeamName varchar(255)
+	TeamName varchar(255) NOT NULL PRIMARY KEY
 );
 
 

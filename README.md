@@ -1,6 +1,8 @@
 # The Boston Bruins vs. The Chicago Blackhawks
 ```
-In 1924 and subsequently in 1926, two iconic hockey teams were formed; The Boston Bruins and the Chicago\ Blackhawks. This small application built with Java and MySQL lets you explore the roster\ for both teams and stay updated on when and where the next game is.
+In 1924 and subsequently in 1926, two iconic hockey teams were formed; The Boston Bruins and the Chicago
+Blackhawks. This small application built with Java and MySQL lets you explore the roster for both teams 
+and stay updated on when and where the next game is.
 ```
 
 ## Getting Started

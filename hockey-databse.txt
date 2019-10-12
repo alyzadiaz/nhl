@@ -21,12 +21,112 @@ CREATE TABLE nhl.player(
 	FOREIGN KEY (TeamName) REFERENCES team(TeamName)
 );
 
+CREATE TABLE nhl.team(
+	TeamName varchar(255) NOT NULL PRIMARY KEY
+);
+
+CREATE TABLE nhl.game(
+	TeamName varchar(255),
+	Opponent varchar(255),
+	Away varchar(1),
+	Day date,
+	Time time
+);
 
 ---------------------------------------------------VALUES-------------------------------------------------
-INSERT INTO nhl.team(
-	VALUES ("Bruins"),
-	("Blackhawks")
-);
+INSERT INTO nhl.team(TeamName)
+	VALUES ("Bruins"), ("Blackhawks"), ("Sabres"), ("Red Wings"), ("Panthers"), ("Canadiens"),
+	       ("Senators"), ("Lightning"), ("Maple Leafs"), ("Hurricanes"), ("Blue Jackets"),
+	       ("Devils"), ("Islanders"), ("Rangers"), ("Flyers"), ("Penguins"), ("Capitals"),
+	       ("Avalanche"), ("Stars"), ("Wild"), ("Predators"), ("Blues"), ("Jets"), ("Ducks"),
+	       ("Coyotes"), ("Flames"), ("Oilers"), ("Kings"), ("Sharks"), ("Canucks"), 
+	       ("Golden Knights");
+
+INSERT INTO nhl.game(TeamName, Opponent, Away, Day)
+	VALUES ("Stars", "Bruins", "T", '2019-10-03', "19:00:00"), ("Coyotes", "Bruins", "T", '2019-10-05', "19:00:00"),
+	       ("Golden Knights", "Bruins", "T", '2019-10-08', "19:00:00"), ("Avalanche", "Bruins", "T", '2019-10-10', "19:00:00"),
+	       ("Devils", "Bruins", "F", '2019-10-12', "19:00:00"), ("Ducks", "Bruins", "F", '2019-10-14', "19:00:00"),
+	       ("Lightning", "Bruins", "F", '2019-10-17', "19:00:00"), ("Maple Leafs", "Bruins", "T", '2019-10-19', "19:00:00"),
+	       ("Maple Leafs", "Bruins", "F", '2019-10-22', "19:00:00"), ("Blues", "Bruins", "F", '2019-10-26', "19:00:00"),
+	       ("Rangers", "Bruins", "T", '2019-10-27', "19:00:00"), ("Sharks", "Bruins", "F", '2019-10-29', "19:00:00"),
+	       ("Senators", "Bruins", "F", '2019-11-02', "19:00:00"), ("Penguins", "Bruins", "F", '2019-11-04', "19:00:00"),
+	       ("Canadiens", "Bruins", "T", '2019-11-05', "19:00:00"), ("Red Wings", "Bruins", "T",'2019-11-08', "19:00:00"),
+	       ("Flyers", "Bruins", "F", '2019-11-10', "19:00:00"), ("Panthers", "Bruins", "F", '2019-11-12', "19:00:00"),
+	       ("Maple Leafs", "Bruins", "T", '2019-11-15', "19:00:00"), ("Capitals", "Bruins", "F", '2019-11-16', "19:00:00"),
+	       ("Devils", "Bruins", "T", '2019-11-19', "19:00:00"), ("Sabres", "Bruins", "F", '2019-11-21', "19:00:00"),
+	       ("Wild", "Bruins", "F", '2019-11-23', "19:00:00"), ("Canadiens", "Bruins", "T", '2019-11-26', "19:00:00"),
+	       ("Senators", "Bruins", "F", '2019-11-27', "19:00:00"), ("Rangers", "Bruins", "F", '2019-11-29', "19:00:00"),
+	       ("Canadiens", "Bruins", "F", '2019-12-01', "19:00:00"), ("Hurricanes", "Bruins", "F", '2019-12-03', "19:00:00"),
+	       ("Blackhawks", "Bruins", "F", '2019-12-05', "19:00:00"), ("Avalanche", "Bruins", "F", '2019-12-07', "19:00:00"),
+	       ("Senators", "Bruins", "T", '2019-12-09', "19:00:00"), ("Capitals", "Bruins", "T", '2019-12-11', "19:00:00"),
+               ("Lightning", "Bruins", "T", '2019-12-12', "19:00:00"), ("Panthers", "Bruins", "T", '2019-12-14', "19:00:00"),
+	       ("Kings", "Bruins", "F", '2019-12-17', "19:00:00"), ("Islanders", "Bruins", "F", '2019-12-19', "19:00:00"),
+	       ("Predators", "Bruins", "F", '2019-12-21', "19:00:00"), ("Capitals", "Bruins", "F", '2019-12-23', "19:00:00"),
+	       ("Sabres", "Bruins", "T", '2019-12-27', "19:00:00"), ("Sabres", "Bruins", "F", '2019-12-29', "19:00:00"),
+	       ("Devils", "Bruins", "T", '2019-12-31', "19:00:00"), ("Blue Jackets", "Bruins", "F", '2020-01-02', "19:00:00"),
+	       ("Oilers", "Bruins", "F", '2020-01-04', "19:00:00"), ("Predators", "Bruins", "T", '2020-01-07', "19:00:00"),
+	       ("Jets", "Bruins", "F", '2020-01-09', "19:00:00"), ("Islanders", "Bruins", "T", '2020-01-11', "19:00:00"),
+	       ("Flyers", "Bruins", "T", '2020-01-13', "19:00:00"), ("Blue Jackets", "Bruins", "T", '2020-01-14', "19:00:00"),
+	       ("Penguins", "Bruins", "F", '2020-01-16', "19:00:00), ("Penguins", "Bruins", "T", '2020-01-19', "19:00:00"),
+	       ("Golden Knights", "Bruins", "F", '2020-01-21', "19:00:00"), ("Jets", "Bruins", "T", '2020-01-31', "19:00:00"),
+	       ("Wild", "Bruins", "T", '2020-02-01', "19:00:00"), ("Canucks", "Bruins", "F", '2020-02-04', "19:00:00"),
+	       ("Blackhawks", "Bruins", "T", '2020-02-05', "19:00:00"), ("Coyotes", "Bruins", "F", '2020-02-08', "19:00:00"),
+	       ("Red Wings", "Bruins", "T", '2020-02-09', "19:00:00"), ("Canadiens", "Bruins", "F", '2020-02-12', "19:00:00"),
+	       ("Red Wings", "Bruins", "F", '2020-02-15', "19:00:00"), ("Rangers", "Bruins", "T", '2020-02-16', "19:00:00"),
+	       ("Oilers", "Bruins", "T", '2020-02-19', "19:00:00"), ("Flames", "Bruins", "T", '2020-02-21', "19:00:00"),
+	       ("Canucks", "Bruins", "T", '2020-02-22', "19:00:00"), ("Flames", "Bruins", "F", '2020-02-25', "19:00:00"),
+	       ("Stars", "Bruins", "F", '2020-02-27', "19:00:00"), ("Islanders", "Bruins", "T", '2020-02-29', "19:00:00"),
+	       ("Lightning", "Bruins", "T", '2020-03-03', "19:00:00"), ("Panthers", "Bruins", "T", '2020-03-05', "19:00:00"),
+	       ("Lightning", "Bruins", "F", '2020-03-07', "19:00:00"), ("Flyers", "Bruins", "T", '2020-03-10', "19:00:00"),
+	       ("Sabres", "Bruins", "T", '2020-03-13', "19:00:00"), ("Maple Leafs", "Bruins", "F", '2020-03-14', "19:00:00"),
+	       ("Blue Jackets", "Bruins", "F", '2020-03-16', "19:00:00"), ("Ducks", "Bruins", "T", '2020-03-18', "19:00:00"),
+	       ("Kings", "Bruins", "T", '2020-03-19', "19:00:00"), ("Sharks", "Bruins", "T", '2020-03-21', "19:00:00"),
+	       ("Red Wings", "Bruins", "F", '2020-03-24', "19:00:00"), ("Senators", "Bruins", "F", '2020-03-26', "19:00:00"),
+	       ("Panthers", "Bruins", "F", '2020-03-28', "19:00:00"), ("Hurricanes", "Bruins", "T", '2020-03-31', "19:00:00"),
+	       ("Blues", "Bruins", "T", '2020-04-02', "19:00:00"), ("Hurricanes", "Bruins", "F", '2020-04-04', "19:00:00");
+
+INSERT INTO nhl.game (TeamName, Opponent, Away, Day)
+	VALUES ("Flyers", "Blackhawks", "T", '2019-10-04', "19:00:00"), ("Sharks", "Blackhawks", "F", '2019-10-10', "19:00:00"),
+	       ("Jets", "Blackhawks", "F", '2019-10-12', "19:00:00"), ("Oilers", "Blackhawks", "F", '2019-10-14', "19:00:00"),
+	       ("Blue Jackets", "Blackhawks", "F", '2019-10-18', "19:00:00"), ("Capitals", "Blackhawks", "F", '2019-10-20', "19:00:00"),
+	       ("Golden Knights", "Blackhawks", "F", '2019-10-22', "19:00:00"), ("Flyers", "Blackhawks", "F", '2019-10-24', "19:00:00"),
+	       ("Hurricanes", "Blackhawks", "T", '2019-10-26', "19:00:00"), ("Kings", "Blackhawks", "F", '2019-10-27', "19:00:00"),
+	       ("Predators", "Blackhawks", "T", '2019-10-29', "19:00:00"), ("Kings", "Blackhawks", "T", '2019-11-02', "19:00:00"),
+	       ("Ducks", "Blackhawks", "T", '2019-11-03', "19:00:00"), ("Sharks", "Blackhawks", "T", '2019-11-05', "19:00:00"),
+	       ("Canucks", "Blackhawks", "F", '2019-11-07', "19:00:00"), ("Penguins", "Blackhawks", "T", '2019-11-09', "19:00:00"),
+	       ("Maple Leafs", "Blackhawks", "F", '2019-11-10', "19:00:00"), ("Golden Knights", "Blackhawks", "T", '2019-11-13', "19:00:00"),
+	       ("Predators", "Blackhawks", "T", '2019-11-16', "19:00:00"), ("Sabres", "Blackhawks", "F", '2019-11-17', "19:00:00"), 
+	       ("Hurricanes", "Blackhawks", "F", '2019-11-19', "19:00:00"), ("Lightning", "Blackhawks", "F", '2019-11-21', "19:00:00"),
+	       ("Stars", "Blackhawks", "T", '2019-11-23', "19:00:00"), ("Stars", "Blackhawks", "F", '2019-11-26', "19:00:00"),
+	       ("Avalanche", "Blackhawks", "F", '2019-11-29', "19:00:00"), ("Avalanche", "Blackhawks", "T", '2019-11-30', "19:00:00"),
+	       ("Blues", "Blackhawks", "F", '2019-12-02', "19:00:00"), ("Bruins", "Blackhawks", "T", '2019-12-05', "19:00:00"),
+	       ("Devils", "Blackhawks", "T", '2019-12-06', "19:00:00"), ("Coyotes", "Blackhawks", "F", '2019-12-08', "19:00:00"),
+	       ("Golden Knights", "Blackhawks", "T", '2019-12-10', "19:00:00"), ("Coyotes", "Blackhawks", "T", '2019-12-12', "19:00:00"),
+	       ("Blues", "Blackhawks", "T", '2019-12-14', "19:00:00"), ("Wild", "Blackhawks", "F", '2019-12-15', "19:00:00"),
+	       ("Avalanche", "Blackhawks", "F", '2019-12-18', "19:00:00"), ("Jets", "Blackhawks", "T", '2019-12-19', "19:00:00"),
+	       ("Avalanche", "Blackhawks", "T", '2019-12-21', "19:00:00"), ("Devils", "Blackhawks", "F", '2019-12-23', "19:00:00"),
+	       ("Islanders", "Blackhawks", "F", '2019-12-27', "19:00:00"), ("Blue Jackets", "Blackhawks", "T", '2019-12-29', "19:00:00"),
+	       ("Flames", "Blackhawks", "T", '2019-12-31', "19:00:00"), ("Canucks", "Blackhawks", "T", '2020-01-02', "19:00:00"),
+	       ("Red Wings", "Blackhawks", "F", '2020-01-05', "19:00:00"), ("Flames", "Blackhawks", "F", '2020-01-07', "19:00:00"),
+	       ("Predators", "Blackhawks", "F", '2020-01-09', "19:00:00"), ("Ducks", "Blackhawks", "F", '2020-01-11', "19:00:00"),
+	       ("Senators", "Blackhawks", "T", '2020-01-14', "19:00:00"), ("Canadiens", "Blackhawks", "T", '2020-01-15', "19:00:00"),
+	       ("Maple Leafs", "Blackhawks", "T", '2020-01-18', "19:00:00"), ("Jets", "Blackhawks", "F", '2020-01-19', "19:00:00"),
+	       ("Panthers", "Blackhawks", "F", '2020-01-21', "19:00:00"), ("Coyotes", "Blackhawks", "T", '2020-02-01', "19:00:00"),
+	       ("Wild", "Blackhawks", "T", '2020-02-04', "19:00:00"), ("Bruins", "Blackhawks", "F", '2020-02-05', "19:00:00"),
+	       ("Jets", "Blackhawks", "T", '2020-02-09', "19:00:00"), ("Oilers", "Blackhawks", "T", '2020-02-11', "19:00:00"),
+	       ("Canucks", "Blackhawks", "T", '2020-02-12', "19:00:00"), ("Flames", "Blackhawks", "T", '2020-02-15', "19:00:00"),
+	       ("Jets", "Blackhawks", "T", '2020-02-16', "19:00:00"), ("Rangers", "Blackhawks", "F", '2020-02-19', "19:00:00"),
+	       ("Predators", "Blackhawks", "F", '2020-02-21', "19:00:00"), ("Stars", "Blackhawks", "T", '2020-02-23', "19:00:00"),
+	       ("Blues", "Blackhawks", "T", '2020-02-25', "19:00:00"), ("Lightning", "Blackhawks", "T", '2020-02-27', "19:00:00"),
+	       ("Panthers", "Blackhawks", "T", '2020-02-29', "19:00:00"), ("Ducks", "Blackhawks", "F", '2020-03-03', "19:00:00"),
+	       ("Oilers", "Blackhawks", "F", '2020-03-05', "19:00:00"), ("Red Wings", "Blackhawks", "T", '2020-03-06', "19:00:00"),
+	       ("Blues", "Blackhawks", "F", '2020-03-08', "19:00:00"), ("Sharks", "Blackhawks", "F", '2020-03-11', "19:00:00"), 
+	       ("Senators", "Blackhawks", "F", '2020-03-13', "19:00:00"), ("Capitals", "Blackhawks", "T", '2020-03-14', "19:00:00"),
+	       ("Wild", "Blackhawks", "T", '2020-03-17', "19:00:00"), ("Wild", "Blackhawks", "F", '2020-03-19', "19:00:00"),
+	       ("Sabres", "Blackhawks", "T", '2020-03-21', "19:00:00"), ("Predators", "Blackhawks", "F", '2020-03-22', "19:00:00"),
+	       ("Penguins", "Blackhawks", "F", '2020-03-25', "19:00:00"), ("Stars", "Blackhawks", "F", '2020-03-27', "19:00:00"),
+	       ("Kings", "Blackhawks", "F", '2020-03-29', "19:00:00"), ("Canadiens", "Blackhawks", "F", '2020-03-31', "19:00:00"),
+	       ("Islanders", "Blackhawks", "T", '2020-04-02', "19:00:00"), ("Rangers", "Blackhawks", "T", '2020-04-04', "19:00:00");
 
 INSERT INTO nhl.player (TeamName, Name, Number, Flag, Position, Height, Weight, Exp, DOB, Age)
 	VALUES ("Bruins", "David Backes", 42, "USA", 'F', "6-3", 215, 13, '1984-05-01', 35),
@@ -84,3 +184,15 @@ INSERT INTO nhl.player (TeamName, Name, Number, Flag, Position, Height, Weight, 
     	("Blackhawks", "Dylan Strome", 17, "CAN", 'F', "6-3", 200, 3, '1997-03-07', 22),
     	("Blackhawks", "Jonathan Toews", 19, "CAN", 'F', "6-2", 201, 12, '1988-04-29', 31);
 
+--------------------------------------------------QUERIES-------------------------------------------------
+SELECT * FROM nhl.players;
+
+SELECT * FROM nhl.game;
+
+SELECT * FROM nhl.game
+WHERE Day>=today AND Time>now AND Opponent = "Bruins"
+LIMIT 1;
+
+SELECT * FROM nhl.game
+WHERE Day>=today AND Time>now AND Opponent = "Blackhawks"
+LIMIT 1;

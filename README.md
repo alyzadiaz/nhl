@@ -21,4 +21,5 @@ instructions
 
 ## Acknowledgments
 * Player headshots were pulled from the [NHL](nhl.com) official website.
+* Team logos were pulled from the [ESPN](espn.com) official website.
 * [Country Flags](countryflags.com) used in player profiles.

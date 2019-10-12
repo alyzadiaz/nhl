@@ -7,14 +7,14 @@ and stay updated on when and where the next game is.
 
 ## Getting Started
 * Windows users can directly run the .exe file without the need of a JRE.
-* Mac users will need to download the most current [JRE](http://www.docs.oracle.com/javase/9/install/installation-jdk-and-jre-macos.htm#JSJIG-GUID-2FE451B0-9572-4E38-A1A5-568B77B146DE)
+* A Mac version of this application is currently unavailable.
 
 
 ## Installing
 How to install this program
 ```
-Windows:
-Mac:
+Windows: Download and unzip the Bruins vs Blackhawks.zip file and run the .exe file found inside.
+Mac: currently unavailable.
 ```
 
 ## Built With

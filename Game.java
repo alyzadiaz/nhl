@@ -1,4 +1,5 @@
 import java.sql.Date;
+import java.sql.Time;
 import java.text.SimpleDateFormat;
 
 import javafx.geometry.HPos;
@@ -22,6 +23,7 @@ public class Game {
 	private String opponent;
 	private String away;
 	private Date day;
+	private Time time;
 	
 	private ImageView teamView;
 	private ImageView oppView;
@@ -35,12 +37,14 @@ public class Game {
 	 * @param o - opponent team
 	 * @param a - F = team is playing a home game, T = team is away
 	 * @param d - date of the game
+	 * @param t - time of the game
 	 */
-	public Game(String n, String o, String a, Date d) {
+	public Game(String n, String o, String a, Date d, Time t) {
 		teamName = n;
 		opponent = o;
 		away = a;
 		day = d;
+		time = t;
 		
 		teamView = new ImageView(new Image("logos/"+teamName.toLowerCase()+".png"));
 		teamView.setFitWidth(200);
@@ -116,6 +120,22 @@ public class Game {
 	 */
 	public Date getDay() {
 		return day;
+	}
+	
+	/**
+	 * Sets the time for the game
+	 * @param t
+	 */
+	public void setTime(Time t) {
+		time = t;
+	}
+	
+	/**
+	 * Returns the time for the game
+	 * @return
+	 */
+	public Time getTime() {
+		return time;
 	}
 	
 	/**

@@ -175,7 +175,7 @@ public class Game {
 		gPane.add(at, 1, 2);
 		gPane.add(d, 1, 4);
 		
-		if(away.equals("F")) {
+		if(away.equals("T")) {
 			gPane.add(oppView, 0, 2);
 			gPane.add(opp, 0, 3);
 			

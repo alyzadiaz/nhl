@@ -31,6 +31,8 @@ public class Game {
 	private GridPane gPane;
 	private Scene scene;
 	
+	private ClassLoader cl;
+	
 	/**
 	 * Initializes a new game day
 	 * @param n - team name
@@ -46,16 +48,23 @@ public class Game {
 		day = d;
 		time = t;
 		
-		teamView = new ImageView(new Image("logos/"+teamName.toLowerCase()+".png"));
+		cl = this.getClass().getClassLoader();
+		
+		String tn = "logos/"+teamName.toLowerCase()+".png";
+		
+		teamView = new ImageView(new Image(cl.getResource(tn).toString()));
 		teamView.setFitWidth(200);
 		teamView.setFitHeight(200);
 		
-		oppView = new ImageView(new Image("logos/"+opponent.toLowerCase()+".png"));
+		String on = "logos/"+opponent.toLowerCase()+".png";
+		
+		oppView = new ImageView(new Image(cl.getResource(on).toString()));
 		oppView.setFitWidth(200);
 		oppView.setFitHeight(200);
 		
 		gPane = new GridPane();
 		scene = new Scene(gPane, 900, 900);
+		
 	}
 	
 	/**
@@ -147,8 +156,8 @@ public class Game {
 		gPane.setVgap(50);
 		gPane.setAlignment(Pos.CENTER);
 		
-		Font bankFont = Font.loadFont(getClass().getResourceAsStream("misc/F25_Bank_Printer.otf"), 25);
-		Font brushFont = Font.loadFont(getClass().getResourceAsStream("misc/brush.otf"), 30);
+		Font bankFont = Font.loadFont(cl.getResource("misc/F25_Bank_Printer.otf").toString(), 25);
+		Font brushFont = Font.loadFont(cl.getResource("misc/brush.otf").toString(), 30);
 		
 		Text title = new Text("Next "+opponent+" Game:");
 		title.setFont(bankFont);

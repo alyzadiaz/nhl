@@ -1,3 +1,4 @@
+import java.net.URL;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 
@@ -47,6 +48,8 @@ public class Player {
 	
 	private BackgroundImage background;
 	
+	private ClassLoader cl;
+	
 	/**
 	 * Initializes a new player with the following variables:
 	 * @param a - team name
@@ -81,6 +84,8 @@ public class Player {
 		
 		setCountry(flag);
 		viewCountry = new ImageView(country);
+		
+		cl = this.getClass().getClassLoader();
 	}
 	
 	/**
@@ -256,8 +261,8 @@ public class Player {
 	/**
 	 * Creates and sets the player's photo
 	 */
-	public void createPhoto(String URL) {
-		photo = new Image(URL);
+	public void createPhoto(URL url) {
+		photo = new Image(url.toString());
 		
 		view = new ImageView(photo);
 		view.setFitWidth(100);
@@ -282,24 +287,26 @@ public class Player {
 	 * @param f - country abbreviation
 	 */
 	private void setCountry(String f) {
+		cl = this.getClass().getClassLoader();
+		
 		switch(f) {
 		case "CAN":
-			country = new Image("flags/can.png");
+			country = new Image(cl.getResource("flags/can.png").toString());
 			break;
 		case "CZE":
-			country = new Image("flags/cze.png");
+			country = new Image(cl.getResource("flags/cze.png").toString());
 			break;
 		case "FIN":
-			country = new Image("flags/fin.png");
+			country = new Image(cl.getResource("flags/fin.png").toString());
 			break;
 		case "SVK":
-			country = new Image("flags/svk.png");
+			country = new Image(cl.getResource("flags/svk.png").toString());
 			break;
 		case "SWE":
-			country = new Image("flags/swe.png");
+			country = new Image(cl.getResource("flags/swe.png").toString());
 			break;
 		case "USA":
-			country = new Image("flags/usa.png");
+			country = new Image(cl.getResource("flags/usa.png").toString());
 		}
 	}
 	
@@ -364,7 +371,7 @@ public class Player {
 			break;
 		}
 		
-		background = new BackgroundImage(new Image("misc/"+team, 900, 900, false, true),
+		background = new BackgroundImage(new Image(cl.getResource("misc/"+team).toString(), 900, 900, false, true),
 				BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
 				BackgroundSize.DEFAULT);
 		
@@ -375,8 +382,8 @@ public class Player {
 	 * Sets up the player's information page
 	 */
 	public void setup() {
-		Font bankFont = Font.loadFont(getClass().getResourceAsStream("misc/F25_Bank_Printer.otf"), 15);
-		Font brushFont = Font.loadFont(getClass().getResourceAsStream("misc/brush.otf"), 50);
+		Font bankFont = Font.loadFont(cl.getResource("misc/F25_Bank_Printer.otf").toString(), 15);
+		Font brushFont = Font.loadFont(cl.getResource("misc/brush.otf").toString(), 50);
 		
 		Text tn = new Text(teamName);
 		tn.setFont(bankFont);

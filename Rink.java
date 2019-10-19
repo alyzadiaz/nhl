@@ -25,7 +25,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.sql.*;
 import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -42,6 +42,8 @@ public class Rink extends Application{
 		//================================================================================================================================================================
 	    // SQL Connection
 	    //================================================================================================================================================================
+		ClassLoader cl = this.getClass().getClassLoader();
+		
 		Team bruins = new Team("Bruins");
 		Team hawks = new Team("Blackhawks");
 		
@@ -50,15 +52,20 @@ public class Rink extends Application{
 		String today = format.format(calendar.getTime());
 		
 		DateTimeFormatter clock = DateTimeFormatter.ofPattern("HH:mm:ss");
-		LocalDateTime time = LocalDateTime.now();
-		String now = clock.format(time);
+		LocalTime time = LocalTime.now();
 		
+		LocalTime sevenPM = LocalTime.parse("18:59:59.00");
+		if(time.isAfter(sevenPM)) {
+			time = sevenPM;
+		}
+		
+		String now = clock.format(time);
 		/*
 		 * Bruins: 0
 		 * Blackhawks: 1
 		 * 
 		 */
-		ArrayList<Game> nextGames = new ArrayList<>();
+		ArrayList<Game> nextGames = new ArrayList<Game>();
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
@@ -79,7 +86,7 @@ public class Rink extends Application{
 		 * 
 		 */
 		try {
-			Connection c = DriverManager.getConnection("database","username","password");
+			Connection c = DriverManager.getConnection("jdbc:mysql://localhost/nhl","alyza","mangOs870!");
 			String getPlayers = "SELECT * FROM player";
 			String getBruinsDay = "SELECT * FROM game WHERE Day>='"+today+"' AND Time>'"+now+"' AND Opponent = 'Bruins' LIMIT 1";
 			String getHawksDay = "SELECT * FROM game WHERE Day>='"+today+"' AND Time>'"+now+"'AND Opponent= 'Blackhawks' LIMIT 1"; 
@@ -175,7 +182,7 @@ public class Rink extends Application{
 			String lastName = name.substring(name.lastIndexOf(" ")+1);
 			lastName.toLowerCase();
 			
-			bruinsRoster.get(i).createPhoto("player photos/"+lastName+".jpg");
+			bruinsRoster.get(i).createPhoto(cl.getResource("playerphotos/"+lastName+".jpg"));
 		}
 		
 		ArrayList<Player> hawksRoster = hawks.getRoster();
@@ -184,15 +191,15 @@ public class Rink extends Application{
 			String lastName = name.substring(name.lastIndexOf(" ")+1);
 			lastName.toLowerCase();
 			
-			hawksRoster.get(i).createPhoto("player photos/"+lastName+".jpg");
+			hawksRoster.get(i).createPhoto(cl.getResource("playerphotos/"+lastName+".jpg"));
 		}
 		
-		Image bruinsLogo = new Image("misc/bruins.png");
+		Image bruinsLogo = new Image(cl.getResource("misc/Bruins.png").toString());
 		ImageView viewBLogo = new ImageView(bruinsLogo);
 		viewBLogo.setFitHeight(100);
 		viewBLogo.setFitWidth(100);
 		
-		Image hawksLogo = new Image("misc/hawks.gif");
+		Image hawksLogo = new Image((cl.getResource("misc/hawks.gif")).toString());
 		ImageView viewHLogo = new ImageView(hawksLogo);
 		viewHLogo.setFitHeight(100);
 		viewHLogo.setFitWidth(100);
@@ -200,7 +207,7 @@ public class Rink extends Application{
 		//================================================================================================================================================================
 	    // Backgrounds
 	    //================================================================================================================================================================
-		BackgroundImage menuBackground = new BackgroundImage(new Image("misc/menu.png", 900, 900,false,true),
+		BackgroundImage menuBackground = new BackgroundImage(new Image((cl.getResource("misc/menu.png")).toString(), 900, 900,false,true),
 				BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
 				BackgroundSize.DEFAULT);
 		
@@ -295,14 +302,14 @@ public class Rink extends Application{
 		iconOutline.setCenterX(450);
 		iconOutline.setCenterY(300);
 		
-		Image cat = new Image("misc/cat.gif");
+		Image cat = new Image((cl.getResource("misc/cat.gif")).toString());
 		ImageView viewCat = new ImageView(cat);
 		viewCat.setFitWidth(100);
 		viewCat.setFitHeight(100);
 		viewCat.setLayoutX(400);
 		viewCat.setLayoutY(250);
 		
-		Text author = new Text("©Alyza Diaz Rodriguez");
+		Text author = new Text("Â©Alyza Diaz Rodriguez");
 		author.setLayoutX(375);
 		author.setLayoutY(400);
 		
@@ -358,9 +365,9 @@ public class Rink extends Application{
 		//================================================================================================================================================================
 	    // Music
 	    //================================================================================================================================================================
-		String bruinsSong = Rink.class.getResource("music/bruins.mp3").toString();
-		String hawksSong = Rink.class.getResource("music/hawks.mp3").toString();
-		String cheers = Rink.class.getResource("music/cheers.mp3").toString();
+		String bruinsSong = cl.getResource("music/bruins.mp3").toString();
+		String hawksSong = cl.getResource("music/hawks.mp3").toString();
+		String cheers = cl.getResource("music/cheers.mp3").toString();
 		
 		Media ch = new Media(cheers);
 		Media b = new Media(bruinsSong);

@@ -9,6 +9,8 @@ and stay updated on when and where the next game is.
 How to install this program
 ```
 Installing this program is currently unavailable.
+
+A video of the running program is available under demo.mp4.
 ```
 
 ## Built With

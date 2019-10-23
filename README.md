@@ -5,16 +5,10 @@ Blackhawks. This small application built with Java and MySQL lets you explore th
 and stay updated on when and where the next game is.
 ```
 
-## Getting Started
-* Windows users can directly run the .exe file without the need of a JRE.
-* A Mac version of this application is currently unavailable.
-
-
 ## Installing
 How to install this program
 ```
-Windows: Download and unzip the Bruins vs Blackhawks.zip file and run the .exe file found inside.
-Mac: currently unavailable.
+Installing this program is currently unavailable.
 ```
 
 ## Built With
